@@ -72,10 +72,15 @@ If you're using `uv`:
 uv run ./create_map_poster.py --city <city> --country <country> [options]
 ```
 
-Otherwise (pip + venv):
+If you're using `pip` + `venv`:
 
 ```bash
 python create_map_poster.py --city <city> --country <country> [options]
+```
+
+If you are using Docker:
+```bash
+docker compose run --rm map-poster --city <city> --country <country> [options]
 ```
 
 ### Required Options
@@ -210,6 +215,16 @@ python create_map_poster.py --list-themes
 
 # Generate posters for every theme
 python create_map_poster.py -c "Tokyo" -C "Japan" --all-themes
+
+docker compose run --rm map-poster \
+  --city "Nagoya, Aichi" \
+  --country "Japan" \
+  --theme "japanese_ink" \
+  --distance 38000 \
+  --display-city "名古屋市" \
+  --height 12 \
+  --font-family "Noto Sans JP" \
+  --display-country "日本"
 ```
 
 ### Distance Guide
